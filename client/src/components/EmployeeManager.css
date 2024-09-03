@@ -1,0 +1,86 @@
+/* Ensure input fields are large and full-width */
+.form-control-lg {
+    height: 50px;
+    font-size: 1.2rem;
+    width: 100%; /* Makes the input box take full width of the container */
+}
+
+/* Adjust input width for edit forms */
+.edit-input {
+    width: 200px; /* Adjust the width as needed */
+}
+
+/* Align form group items in a row with gaps */
+.form-group.d-flex.gap-2 {
+    flex-direction: row;
+    /* Set the flex direction to row */
+}
+
+/* General layout for form groups */
+.form-group {
+    display: grid;
+    gap: 5px; /* Space between grid items */
+}
+
+/* Ensure form inputs fill the container */
+.form-group input {
+    flex: 1;
+    margin: 5px;
+    min-width: 150px; /* Adjust as needed */
+}
+
+/* Style for buttons */
+.btn {
+    margin-top: 5px;
+}
+
+/* Adjust list group width */
+.list-group {
+    width: 80%;
+}
+
+/* Ensuring consistent margin and width for edit inputs */
+.edit-input {
+    flex: 1;
+    margin: 2px;
+}
+
+/* Employee Manager Container Layout */
+.employee-manager-container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar content";
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 60px auto;
+    height: 100vh; /* Ensure full viewport height */
+}
+
+/* Sidebar styling */
+.employee-sidebar {
+    grid-area: sidebar;
+    height: calc(100vh - 60px); /* Full height minus header */
+    overflow-y: auto; /* Scroll if content overflows */
+}
+
+/* Content area styling */
+.employee-content {
+    grid-area: content;
+    padding: px; /* Padding around content */
+    background-color:  #263043;
+}
+
+/* Styling for employee form group */
+.employee-form-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px; /* Space between items */
+}
+
+/* Styling for employee list items */
+.employee-list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}

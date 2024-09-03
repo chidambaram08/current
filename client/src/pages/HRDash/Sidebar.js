@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 import {
   BsGrid1X2Fill,
   BsFillArchiveFill,
@@ -33,9 +34,10 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
           </a>
         </li>
         <li className="sidebar-list-item">
-          <a href="">
-            <CgProfile className="icon" /> Employee Profile
-          </a>
+        <Link to='/' >
+        <CgProfile className="icon" /> Employee Profile</Link>
+            
+          
         </li>
         <li className="sidebar-list-item">
           <a href="">
