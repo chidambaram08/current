@@ -39,15 +39,28 @@ export default function LoginPage() {
   };
 
   return (
-    <section className="vh-100 gradient-custom" style={{ backgroundColor: "#263043" }}>
+    <section
+      className="vh-100 gradient-custom"
+      style={{ backgroundColor: "#263043" }}
+    >
       <div className="container py-5 h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-12 col-md-8 col-lg-6 col-xl-5">
-            <div className="card" style={{ borderRadius: "1rem", backgroundColor: "#ffffff" }}>
+            <div
+              className="card"
+              style={{ borderRadius: "1rem", backgroundColor: "#ffffff" }}
+            >
               <div className="card-body p-5 text-center">
                 <div className="mb-md-5 mt-md-4 pb-5">
-                  <h2 className="fw-bold mb-2 text-uppercase" style={{ color: "#000000" }}>Login</h2>
-                  <p className="text-black-50 mb-5">Please enter your login and password!</p>
+                  <h2
+                    className="fw-bold mb-2 text-uppercase"
+                    style={{ color: "#000000" }}
+                  >
+                    Login
+                  </h2>
+                  <p className="text-black-50 mb-5">
+                    Please enter your login and password!
+                  </p>
 
                   {error && <p className="text-danger">{error}</p>}
 
@@ -72,7 +85,10 @@ export default function LoginPage() {
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                     />
-                    <label className="form-label" htmlFor="typePasswordX"></label>
+                    <label
+                      className="form-label"
+                      htmlFor="typePasswordX"
+                    ></label>
                   </div>
 
                   <button
@@ -84,9 +100,15 @@ export default function LoginPage() {
                   </button>
 
                   <div className="d-flex justify-content-center text-center mt-4 pt-1">
-                    <a href="#!" className="text-dark"><i className="fab fa-facebook-f fa-lg"></i></a>
-                    <a href="#!" className="text-dark mx-4 px-2"><i className="fab fa-twitter fa-lg"></i></a>
-                    <a href="#!" className="text-dark"><i className="fab fa-google fa-lg"></i></a>
+                    <a href="#!" className="text-dark">
+                      <i className="fab fa-facebook-f fa-lg"></i>
+                    </a>
+                    <a href="#!" className="text-dark mx-4 px-2">
+                      <i className="fab fa-twitter fa-lg"></i>
+                    </a>
+                    <a href="#!" className="text-dark">
+                      <i className="fab fa-google fa-lg"></i>
+                    </a>
                   </div>
                 </div>
               </div>

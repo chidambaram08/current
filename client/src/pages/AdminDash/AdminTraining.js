@@ -4,6 +4,24 @@ import Header from "./Header";
 import Sidebar from "./Sidebar";
 import "./Admin.css";
 
+function App() {
+  const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
+
+  const OpenSidebar = () => {
+    setOpenSidebarToggle(!openSidebarToggle);
+  };
+
+  return (
+    <div className="grid-container">
+      <Header OpenSidebar={OpenSidebar} />
+      <Sidebar
+        openSidebarToggle={openSidebarToggle}
+        OpenSidebar={OpenSidebar}
+      />
+    </div>
+  );
+}
+
 const AdminTraining = () => {
   const [employees, setEmployees] = useState([]);
   const [selectedEmployee, setSelectedEmployee] = useState("");
@@ -129,7 +147,10 @@ const AdminTraining = () => {
   // Pagination logic
   const indexOfLastTraining = currentPage * itemsPerPage;
   const indexOfFirstTraining = indexOfLastTraining - itemsPerPage;
-  const currentTrainings = existingTrainings.slice(indexOfFirstTraining, indexOfLastTraining);
+  const currentTrainings = existingTrainings.slice(
+    indexOfFirstTraining,
+    indexOfLastTraining
+  );
 
   const totalPages = Math.ceil(existingTrainings.length / itemsPerPage);
 
@@ -146,12 +167,14 @@ const AdminTraining = () => {
   };
 
   return (
-    <div>
+    <div className="grid-container">
       <Header />
-      <div className="grid-container">
         <Sidebar />
         <div className="training-form">
-          <h2>{editingTraining ? "Edit Training" : "Assign Training"}</h2>
+         <div className="item-center">
+         <h2>{editingTraining ? "Edit Training" : "Assign Training"}</h2>
+         </div>
+          
           <div className="form-group">
             <select
               onChange={(e) => setSelectedEmployee(e.target.value)}
@@ -203,8 +226,12 @@ const AdminTraining = () => {
                       <strong>Status:</strong>{" "}
                       {training.completed ? "Completed" : "In Progress"}
                     </p>
-                    <button onClick={() => handleEditTraining(training)}>Edit</button>
-                    <button onClick={() => handleDeleteTraining(training._id)}>Delete</button>
+                    <button onClick={() => handleEditTraining(training)}>
+                      Edit
+                    </button>
+                    <button onClick={() => handleDeleteTraining(training._id)}>
+                      Delete
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -212,8 +239,13 @@ const AdminTraining = () => {
                 <button onClick={handlePrevPage} disabled={currentPage === 1}>
                   Previous
                 </button>
-                <span>Page {currentPage} of {totalPages}</span>
-                <button onClick={handleNextPage} disabled={currentPage === totalPages}>
+                <span>
+                  Page {currentPage} of {totalPages}
+                </span>
+                <button
+                  onClick={handleNextPage}
+                  disabled={currentPage === totalPages}
+                >
                   Next
                 </button>
               </div>
@@ -238,7 +270,7 @@ const AdminTraining = () => {
           )}
         </div>
       </div>
-    </div>
+    
   );
 };
 

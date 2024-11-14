@@ -60,31 +60,26 @@ function Home() {
       <div className="main-cards">
         <div className="card">
           <div className="card-inner">
-            <h3> Total Employee</h3>
+            <h3> Total Work</h3>
           </div>
-          <h1> 300</h1>
+          <h1> 20</h1>
         </div>
 
         <div className="card">
         <div className="card-inner">
-          <h3>Job View</h3>
+          <h3>In Progress</h3>
         </div>
-        <h1> 20</h1>
+        <h1> 12</h1>
       </div>
 
       <div className="card">
           <div className="card-inner">
-            <h3> Job Applied</h3> 
+            <h3> Completed</h3> 
           </div>
-          <h1> 10</h1>
+          <h1> 8</h1>
         </div>
 
-        <div className="card">
-        <div className="card-inner">
-          <h3> Resigned Employee</h3>
-        </div>
-        <h1> 17</h1>
-      </div>
+       
     
 
       </div>

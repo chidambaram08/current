@@ -49,24 +49,16 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
             <MdOutlineModelTraining className='icon' /> Training
           </Link>
         </li>
-        <li className='sidebar-list-item'>
-          <Link to="/payroll">
-            <BsMenuButtonWideFill className='icon' /> Payroll
-          </Link>
-        </li>
+        
         <li className='sidebar-list-item'>
           <Link to="/calendar">
             <SlCalender className='icon' /> Calendar
           </Link>
         </li>
-        <li className='sidebar-list-item'>
-          <Link to="/settings">
-            <BsFillGearFill className='icon' /> Settings
-          </Link>
-        </li>
+       
        
         <li className='sidebar-list-item'>
-          <Link to="/Logout">
+          <Link to="/logout">
             <BsPeopleFill className='icon' /> Logout
           </Link>
         </li>

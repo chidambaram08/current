@@ -8,6 +8,7 @@ import
  import { GrDocumentPerformance } from "react-icons/gr";
  import { MdOutlineModelTraining } from "react-icons/md";
  import { MdCoPresent } from "react-icons/md";
+ import { Link, useNavigate } from 'react-router-dom';
 
  
 
@@ -15,7 +16,7 @@ function Sidebar({openSidebarToggle, OpenSidebar}) {
   return (
     <aside id="sidebar" className={openSidebarToggle ? "sidebar-responsive": ""}>
         <div className='sidebar-title'>
-            <div className='sidebar-brand'>
+            <div className='sidebar-brand text-white'>
                 Employee Dashboard
             </div>
             <span className='icon close_icon' onClick={OpenSidebar}>X</span>
@@ -28,22 +29,17 @@ function Sidebar({openSidebarToggle, OpenSidebar}) {
                 </a>
             </li>
             <li className='sidebar-list-item'>
-                <a href="">
-                    < 
-                    CgProfile className='icon'/> My Profile
-                </a>
-            </li>
+            <Link to='/profile'>
+              <CgProfile className='icon' /> Employee Profile
+            </Link>
+          </li>
             <li className='sidebar-list-item'>
                 <a href="">
                     <BsFillGrid3X3GapFill className='icon'/> Attendance
 
                 </a>
             </li>
-            <li className='sidebar-list-item'>
-                <a href="">
-                    <MdCoPresent className='icon'/> Leave
-                </a>
-            </li>
+          
             <li className='sidebar-list-item'>
                 <a href="">
                     <GrDocumentPerformance className='icon'/>Performance
@@ -69,6 +65,11 @@ function Sidebar({openSidebarToggle, OpenSidebar}) {
                     <BsFillGearFill className='icon'/> Setting
                 </a>
             </li>
+            <li className='sidebar-list-item'>
+          <Link to="/logout">
+            <BsPeopleFill className='icon' /> Logout
+          </Link>
+        </li>
         </ul>
     </aside>
   )

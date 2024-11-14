@@ -66,8 +66,10 @@
 /* Content area styling */
 .employee-content {
     grid-area: content;
-    padding: px; /* Padding around content */
-    background-color:  #263043;
+    padding: 20px;
+    background-color: #263043;
+    color: #fff;
+    border-left: 1px solid #ccc; /* Add border between sidebar and content */
 }
 
 /* Styling for employee form group */
@@ -82,5 +84,72 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px;
+    padding: 10px;
+    background-color: #1f2a35;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Button styling for form */
+.employee-form-group .btn {
+    flex: 1;
+    margin-top: 10px;
+    background-color: #28a745;
+    color: #fff;
+}
+
+/* Style for buttons in the employee list */
+.employee-list-group-item button {
+    margin-left: 10px;
+}
+
+/* Pagination styling */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Style for pagination buttons */
+.pagination .page-link {
+    background-color: #343a40;
+    color: #fff;
+    border: 1px solid #6c757d;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+/* Input form fields style */
+.employee-form-group input {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    background-color: #2a3b47;
+    border: 1px solid #3e5a6c;
+    color: #fff;
+}
+
+/* Adjust spacing for the employee manager title */
+.employee-manager-container h3 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/* Form Visibility */
+.employee-manager-container button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+}
+
+.employee-manager-container button:hover {
+    background-color: #0056b3;
 }

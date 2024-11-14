@@ -1,73 +1,66 @@
-import React from "react";
-import {Link} from 'react-router-dom'
-import {
-  BsGrid1X2Fill,
-  BsFillArchiveFill,
-  BsFillGrid3X3GapFill,
-  BsPeopleFill,
-  BsListCheck,
-  BsMenuButtonWideFill,
-  BsFillGearFill,
-} from "react-icons/bs";
-import { SlCalender } from "react-icons/sl";
-import { GrDocumentPerformance } from "react-icons/gr";
-import { MdOutlineModelTraining } from "react-icons/md";
-import { CgProfile } from "react-icons/cg";
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { BsGrid1X2Fill, BsPeopleFill, BsMenuButtonWideFill, BsFillGearFill } from 'react-icons/bs';
+import { SlCalender } from 'react-icons/sl';
+import { GrDocumentPerformance } from 'react-icons/gr';
+import { MdOutlineModelTraining } from 'react-icons/md';
+import { CgProfile } from 'react-icons/cg';
 
 function Sidebar({ openSidebarToggle, OpenSidebar }) {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // Perform any additional logout logic if needed
+    navigate('/logout');
+  };
+
   return (
-    <aside
-      id="sidebar"
-      className={openSidebarToggle ? "sidebar-responsive" : ""}
-    >
-      <div className="sidebar-title">
-        <div className="sidebar-brand">HR Dashboard</div>
-        <span className="icon close_icon" onClick={OpenSidebar}>
-          X
-        </span>
+    <aside id="sidebar" className={`sidebar ${openSidebarToggle ? "sidebar-responsive" : ""}`} style={{ backgroundColor: '#263043' }}>
+      <div className='sidebar-title'>
+        <div className='sidebar-brand text-white'>
+          Admin Dashboard
+        </div>
+        <span className='icon close_icon' onClick={OpenSidebar}>X</span>
       </div>
 
-      <ul className="sidebar-list">
-        <li className="sidebar-list-item">
-          <a href="">
-            <BsGrid1X2Fill className="icon" /> Dashboard
-          </a>
+      <ul className='sidebar-list'>
+        <li className='sidebar-list-item'>
+          <Link to="/admin-dashboard">
+            <BsGrid1X2Fill className='icon' /> Dashboard
+          </Link>
         </li>
-        <li className="sidebar-list-item">
-        <Link to='/' >
-        <CgProfile className="icon" /> Employee Profile</Link>
-            
-          
+        <li className='sidebar-list-item'>
+          <Link to='/employee-manager'>
+            <CgProfile className='icon' /> Employee Profile
+          </Link>
         </li>
-        <li className="sidebar-list-item">
-          <a href="">
-            <GrDocumentPerformance className="icon" /> Performance
-          </a>
+        <li className='sidebar-list-item'>
+          <Link to="/performance">
+            <GrDocumentPerformance className='icon' /> Performance
+          </Link>
         </li>
-        <li className="sidebar-list-item">
-          <a href="">
-            <BsPeopleFill className="icon" /> Recruitement
-          </a>
+        <li className='sidebar-list-item'>
+          <Link to="/recruitment">
+            <BsPeopleFill className='icon' /> Recruitment
+          </Link>
         </li>
-        <li className="sidebar-list-item">
-          <a href="">
-            <MdOutlineModelTraining className="icon" /> Training
-          </a>
+        <li className='sidebar-list-item'>
+          <Link to='/admin-training'>
+            <MdOutlineModelTraining className='icon' /> Training
+          </Link>
         </li>
-        <li className="sidebar-list-item">
-          <a href="">
-            <BsMenuButtonWideFill className="icon" /> Payroll
-          </a>
+       
+        <li className='sidebar-list-item'>
+          <Link to="/calendar">
+            <SlCalender className='icon' /> Calendar
+          </Link>
         </li>
-        <li className="sidebar-list-item">
-          <a href="">
-            <SlCalender className="icon" /> Calender
-          </a>
-        </li>
-        <li className="sidebar-list-item">
-          <a href="">
-            <BsFillGearFill className="icon" /> Settings
-          </a>
+        
+       
+        <li className='sidebar-list-item'>
+          <Link to="/logout">
+            <BsPeopleFill className='icon' /> Logout
+          </Link>
         </li>
       </ul>
     </aside>
